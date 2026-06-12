@@ -4,6 +4,8 @@ A robot controlled by hand gestures using an MPU6050 accelerometer/gyroscope mou
 
 Built as a second year Electrical and Computer Engineering project.
 
+<img width="2000" height="1500" alt="robot_image" src="hand_controlled_robot.jpg" />
+
 ## How It Works
 
 An MPU6050 sensor mounted on the index finger of a glove detects the tilt of your hand. An ESP32 on the glove reads the sensor data and sends movement commands wirelessly to a second ESP32 on the robot using ESP-NOW. The robot ESP32 then drives two DC motors via an L298N motor driver accordingly.
@@ -25,23 +27,23 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 ### Robot
 | Component | Quantity | Details | Purpose |
 |-----------|---------|---------|---------|
-| Diymore ESP32 NodeMCU (USB-C, CH340) | 1 | 2.4GHz WiFi & Bluetooth | Receives gesture commands and controls the motors |
+| ESP32 NodeMCU | 1 | 2.4GHz WiFi & Bluetooth | Receives gesture commands and controls the motors |
 | L298N Motor Driver | 1 | Dual H-bridge | Drives both DC motors and supplies 5V to the HC-SR04 |
 | 2WD Robot Chassis | 1 | Bought off Amazon | Physical base of the robot |
 | DC Hobby Motors | 2 | Standard hobby motors | Moves the robot |
 | HC-SR04 Ultrasonic Sensor | 1 | Front mounted | Detects obstacles and stops forward movement |
-| AA Batteries | 8 | 12V total | Powers the motors and L298N |
+| AA Batteries | 8 | 12V total | Powers the motor driver, ESP32 and sensor |
 
 ### Glove
 | Component | Quantity | Details | Purpose |
 |-----------|---------|---------|---------|
-| Diymore ESP32 NodeMCU (USB-C, CH340) | 1 | 2.4GHz WiFi & Bluetooth | Reads MPU6050 data and sends gesture commands to the robot |
+| ESP32 NodeMCU | 1 | 2.4GHz WiFi & Bluetooth | Reads MPU6050 data and sends gesture commands to the robot |
 | Hoite MPU6050 6-Axis Gyroscope Accelerometer (16-bit AD, DMP, IIC) | 1 | 6-axis accelerometer/gyroscope | Detects hand tilt direction |
 | Winter glove | 1 | Used as the wearable base | Holds all components on the hand |
 
 ## Wiring
 
-### Glove ESP32 — MPU6050
+### MPU6050 — Glove ESP32  
 | MPU6050 | ESP32 |
 |---------|-------|
 | VCC | 3.3V |
@@ -49,7 +51,7 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 | SDA | D21 |
 | SCL | D22 |
 
-### Robot ESP32 — L298N
+### L298N — Robot ESP32
 | L298N | ESP32 |
 |-------|-------|
 | ENA | D18 |
@@ -61,13 +63,24 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 | VCC | 12V (battery) |
 | GND | GND (common) |
 
-### Robot ESP32 — HC-SR04
+### HC-SR04 — Robot ESP32
 | HC-SR04 | Details |
 |---------|---------|
 | VCC | L298N 5V out |
 | GND | GND (common) |
 | TRIG | D17 |
 | ECHO | D16 |
+
+## Schematics
+<figure>
+  <img src="glove_circuit.png" width="400" alt="Glove Schematic">
+  <figcaption>Glove Wiring Schematic</figcaption>
+</figure>
+
+<figure>
+  <img src="robot_circuit.png" width="400" alt="Robot Schematic">
+  <figcaption>Robot Wiring Schematic</figcaption>
+</figure>
 
 ## Safety Features
 
@@ -89,7 +102,7 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 
 ## Known Issues
 
-- Securing the ESP32 to the glove is a challenge — double sided tape was not strong enough. Velcro or hot glue is recommended.
+- Securing the ESP32 to the glove is a challenge. Double sided tape was not strong enough. Currently figuring out a solution to this.
 - D25 on the robot ESP32 behaved unexpectedly for motor control and was swapped out for D33.
 
 ## Possible Future Improvements
