@@ -12,6 +12,8 @@ An MPU6050 sensor mounted on the index finger of a glove detects the tilt of you
 
 A heartbeat system ensures the robot stops automatically if the glove ESP32 goes offline or out of range. An HC-SR04 ultrasonic sensor on the front of the robot stops forward movement if an obstacle is detected within 20cm.
 
+[![Hand Gesture Controlled Robot Demo](https://img.youtube.com/vi/bHCHm_ZQccI/maxresdefault.jpg)](https://youtu.be/bHCHm_ZQccI)
+
 ## Gesture Controls
 
 | Hand Tilt | Robot Action |
