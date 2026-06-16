@@ -2,8 +2,6 @@
 
 A robot controlled by hand gestures using an MPU6050 accelerometer/gyroscope mounted on a glove. Tilting your hand in different directions sends movement commands wirelessly to the robot via ESP-NOW.
 
-Built as a second year Electrical and Computer Engineering project.
-
 <img width="2000" height="1500" alt="robot_image" src="hand_controlled_robot.jpg" />
 
 ## How It Works
