@@ -29,7 +29,7 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 | Component | Quantity | Details | Purpose |
 |-----------|---------|---------|---------|
 | ESP32 NodeMCU | 1 | 2.4GHz WiFi & Bluetooth | Receives gesture commands and controls the motors |
-| L298N Motor Driver | 1 | Dual H-bridge | Drives both DC motors and supplies 5V to the HC-SR04 |
+| L298N Motor Driver | 1 | Dual H-bridge | Drives both DC motors |
 | 2WD Robot Chassis | 1 | Bought off Amazon | Physical base of the robot |
 | DC Hobby Motors | 2 | Standard hobby motors | Moves the robot |
 | HC-SR04 Ultrasonic Sensor | 1 | Front mounted | Detects obstacles and stops forward movement |
