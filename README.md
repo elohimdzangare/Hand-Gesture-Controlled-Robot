@@ -13,6 +13,12 @@ A heartbeat system ensures the robot stops automatically if the glove ESP32 goes
 ## Demo Video
 [![Hand Gesture Controlled Robot Demo](https://img.youtube.com/vi/bHCHm_ZQccI/maxresdefault.jpg)](https://youtu.be/bHCHm_ZQccI)
 
+## Possible Applications
+
+- **Assistive robotics**: gesture control offers an alternative input method for people who might struggle with traditional joysticks or remote controls.
+- **Remote inspection in hazardous areas**: a small wireless robot with obstacle avoidance could be adapted to explore tight or unsafe spaces (pipes, collapsed structures, hazardous environments) while being driven intuitively from a safe distance.
+- **Teleoperation research/prototyping**: the gesture-to-motor-command pipeline is a simple, low-cost way to prototype more advanced teleoperated systems, like drones or robotic arms, before investing in more expensive motion capture hardware.
+
 ## Gesture Controls
 
 | Hand Tilt | Robot Action |
